@@ -1,0 +1,9 @@
+{
+	"name": "adf-excercise-1",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "372d2ca9-69de-4801-8862-b507f9f12232",
+		"tenantId": "1f4beacd-b7aa-49b2-aaa1-b8525cb257e0"
+	}
+}
