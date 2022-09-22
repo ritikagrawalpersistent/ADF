@@ -61,6 +61,9 @@
 				},
 				{
 					"name": "join5"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -150,7 +153,10 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join5",
-				"join1 sink(allowSchemaDrift: true,",
+				"join1 derive(DW_InsertDate = currentTimestamp(),",
+				"          DW_UpdateDate = currentTimestamp(),",
+				"          Row_WID = nextSequence()) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
 				"     insertable:true,",
