@@ -29,7 +29,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "CDW_Customer",
+						"referenceName": "CDW_Dim_Customer",
 						"type": "DatasetReference"
 					},
 					"name": "DimCustomer"
@@ -41,6 +41,9 @@
 				},
 				{
 					"name": "join2"
+				},
+				{
+					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -112,6 +115,9 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join2",
+				"join1 derive(DW_InsertDate = currentTimestamp(),",
+				"          DW_UpdateDate = currentTimestamp(),",
+				"          ROW_WID = nextSequence()) ~> derivedColumn1",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
