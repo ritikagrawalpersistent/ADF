@@ -1,0 +1,19 @@
+{
+	"name": "CDW_Fact_Sales",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Output"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SalesCDW",
+			"table": "Fact_Sales"
+		}
+	}
+}
